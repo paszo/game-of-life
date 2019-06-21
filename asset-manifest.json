@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/yelyzaveta-kuzmina/game-of-life/static/css/main.de733c9f.chunk.css",
+    "main.js": "/yelyzaveta-kuzmina/game-of-life/static/js/main.a9a3f02c.chunk.js",
+    "main.js.map": "/yelyzaveta-kuzmina/game-of-life/static/js/main.a9a3f02c.chunk.js.map",
+    "runtime~main.js": "/yelyzaveta-kuzmina/game-of-life/static/js/runtime~main.7bbec820.js",
+    "runtime~main.js.map": "/yelyzaveta-kuzmina/game-of-life/static/js/runtime~main.7bbec820.js.map",
+    "static/js/2.f0edeedb.chunk.js": "/yelyzaveta-kuzmina/game-of-life/static/js/2.f0edeedb.chunk.js",
+    "static/js/2.f0edeedb.chunk.js.map": "/yelyzaveta-kuzmina/game-of-life/static/js/2.f0edeedb.chunk.js.map",
+    "index.html": "/yelyzaveta-kuzmina/game-of-life/index.html",
+    "precache-manifest.728bf5d38b224430b8bc837d641eb4b4.js": "/yelyzaveta-kuzmina/game-of-life/precache-manifest.728bf5d38b224430b8bc837d641eb4b4.js",
+    "service-worker.js": "/yelyzaveta-kuzmina/game-of-life/service-worker.js",
+    "static/css/main.de733c9f.chunk.css.map": "/yelyzaveta-kuzmina/game-of-life/static/css/main.de733c9f.chunk.css.map"
+  }
+}

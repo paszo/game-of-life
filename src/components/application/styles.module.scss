@@ -1,0 +1,26 @@
+.main {
+  display: block;
+  text-align: center;
+}
+
+.gridWrapper {
+  text-align: center;
+}
+
+.generation {
+  font-size: 20px;
+  margin-bottom: 5px;
+}
+
+.resetGame {
+  display: block;
+  margin: 0 auto;
+  color: #E55743;
+  width: 80px;
+  height: 30px;
+  line-height: 20px;
+  font-size: 16px;
+  cursor: pointer;
+  outline: none;
+  border: 0;
+}

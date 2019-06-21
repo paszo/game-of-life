@@ -1,0 +1,28 @@
+.main {
+  position: relative;
+  display: inline-block;
+  border-top: 1px solid black;
+  border-right: 1px solid black;
+}
+
+.row {
+  display: flex;
+
+  .cell {
+    text-align: center;
+    border-left: 1px solid black;
+    border-bottom: 1px solid black;
+    width: 1em;
+    height: 1em;
+
+    &.alive {
+      background-color: var(--alive-cell-color);
+    }
+  }
+}
+
+.colorPicker {
+  position: absolute;
+  right: 0;
+  top: -30px;
+}

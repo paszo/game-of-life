@@ -1,0 +1,59 @@
+$primary-color: #E55743;
+$border-offset: 5px;
+
+.fancyButton {
+  position: relative;
+  display: inline-block;
+  margin-top: 10px;
+  margin-bottom: 5px;
+  color: #E55743;
+  background-color: #FCF3EC;
+  border: 0;
+  width: 100px;
+  height: 35px;
+  line-height: 30px;
+  font-size: 20px;
+  cursor: pointer;
+  outline: none;
+
+  &::after,
+  &::before {
+    content: '';
+    position: absolute;
+    border: 1px solid $primary-color;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    transition:
+      top 0.35s cubic-bezier(1, 2.83, .81, 1.48),
+      right 0.35s cubic-bezier(1, 2.83, .81, 1.48),
+      bottom 0.35s cubic-bezier(1, 2.83, .81, 1.48),
+      left 0.35s cubic-bezier(1, 2.83, .81, 1.48);
+  }
+
+  &::after {
+    left: -$border-offset;
+    right: -$border-offset;
+  }
+
+  &::before {
+    top: -$border-offset;
+    bottom: -$border-offset;
+  }
+
+  &:hover {
+    background-color: rgba(#FCF3EC, 0.1);
+    transition: 2s;
+
+    &::after {
+      left: 0;
+      right: 0;
+    }
+
+    &::before {
+      top: 0;
+      bottom: 0;
+    }
+  }
+}

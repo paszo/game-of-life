@@ -1,20 +1,20 @@
-import { useState, useEffect, useCallback, useRef } from 'react';
-import { updateMatrixValueAtAddress } from '../../utils/array';
-import { getNextGenerationMatrix } from './helpers';
+import { useState, useEffect, useCallback, useRef } from "react";
+import { updateMatrixValueAtAddress } from "../helpers";
+import { getNextGenerationMatrix } from "../helpers";
 
 const INITIAL_BOARD_SIZE = { width: 35, height: 35 };
 const INTERVAL = 50;
 
 export const GameState = {
-  Started: 'started',
-  Paused: 'paused'
+  Started: "started",
+  Paused: "paused"
 };
 
 export const useGameOfLifeState = () => {
-  const [ gameState, setGameState ] = useState(GameState.Paused);
-  const [ gridSize, setGridSize ] = useState(INITIAL_BOARD_SIZE);
-  const [ grid, setGrid ] = useState([]);
-  const [ generation, setGeneration ] = useState(0);
+  const [gameState, setGameState] = useState(GameState.Paused);
+  const [gridSize, setGridSize] = useState(INITIAL_BOARD_SIZE);
+  const [grid, setGrid] = useState([]);
+  const [generation, setGeneration] = useState(0);
   const intervalIdRef = useRef(null);
 
   const onGameStart = useCallback(() => {
@@ -26,9 +26,9 @@ export const useGameOfLifeState = () => {
     setGameState(GameState.Paused);
     setGrid(newGrid);
     setGeneration(0);
-  }, [ gridSize ]);
+  }, [gridSize]);
 
-  useEffect(onGameStart, [ gridSize ]);
+  useEffect(onGameStart, [gridSize]);
 
   useEffect(() => {
     if (gameState === GameState.Paused) {
@@ -40,7 +40,7 @@ export const useGameOfLifeState = () => {
       setGeneration(generation => generation + 1);
       setGrid(getNextGenerationMatrix);
     }, INTERVAL);
-  }, [ gameState ]);
+  }, [gameState]);
 
   const onCellToggle = useCallback((rowIndex, columnIndex) => {
     setGrid(grid => {
@@ -50,11 +50,19 @@ export const useGameOfLifeState = () => {
   }, []);
 
   const onGameStateToggle = useCallback(() => {
-    const newGameState = gameState === GameState.Paused
-      ? GameState.Started
-      : GameState.Paused;
+    const newGameState =
+      gameState === GameState.Paused ? GameState.Started : GameState.Paused;
     setGameState(newGameState);
-  }, [ gameState ]);
+  }, [gameState]);
 
-  return { gameState, grid, generation, onCellToggle, onGameStateToggle, gridSize, setGridSize, onGameStart };
+  return {
+    gameState,
+    grid,
+    generation,
+    onCellToggle,
+    onGameStateToggle,
+    gridSize,
+    setGridSize,
+    onGameStart
+  };
 };

@@ -1,6 +1,6 @@
 import React from "react";
 import classNames from "classnames";
-import ColorPicker from "../color-picker";
+import ColorPicker from "../../modules/color-picker";
 import styles from "./styles.module.scss";
 
 const LEFT_BUTTON_BIT_MASK = 1;

@@ -1,10 +1,10 @@
 import React from "react";
 import Grid from "../grid";
-import FancyButton from "../fancy-button";
-import { useGameOfLifeState, GameState } from "./state";
+import FancyButton from "../../components/fancy-button";
+import { useGameOfLifeState, GameState } from "../../state";
 import styles from "./styles.module.scss";
 
-const Application = () => {
+const App = () => {
   const {
     gameState,
     grid,
@@ -34,4 +34,4 @@ const Application = () => {
   );
 };
 
-export default Application;
+export default App;

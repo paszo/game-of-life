@@ -1,7 +1,6 @@
 body {
-  display: flex;
-  justify-content: center;
-  margin: 0;
+  display: block;
+  margin: 0 auto;
   height: 100%;
   overflow: hidden;
   font-family: Orbitron;

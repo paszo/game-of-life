@@ -1,30 +1,25 @@
-import React from 'react';
-import classNames from 'classnames';
-import { debounce } from 'lodash';
-import ColorPicker from '../color-picker';
-import styles from './styles.module.scss';
+import React from "react";
+import classNames from "classnames";
+import ColorPicker from "../color-picker";
+import styles from "./styles.module.scss";
 
 const LEFT_BUTTON_BIT_MASK = 1;
-const INITIAL_ALIVE_CELL_COLOR = '#E55743';
+const INITIAL_ALIVE_CELL_COLOR = "#E55743";
 
-const onAliveCellColorChange = (color) => {
-  document.documentElement.style.setProperty('--alive-cell-color', color);
+const onAliveCellColorChange = color => {
+  document.documentElement.style.setProperty("--alive-cell-color", color);
 };
 
 onAliveCellColorChange(INITIAL_ALIVE_CELL_COLOR);
 
 const Grid = ({ grid, onCellToggle }) => {
-  const onCellToggleDebounced = debounce(onCellToggle, Math.Infinity, {
-    leading: true,
-    trailing: false
-  });
-
   return (
     <div className={styles.main}>
       <ColorPicker
         className={styles.colorPicker}
         initialColor={INITIAL_ALIVE_CELL_COLOR}
-        onChange={onAliveCellColorChange} />
+        onChange={onAliveCellColorChange}
+      />
 
       {grid.map((row, rowIndex) => (
         <div key={rowIndex} className={styles.row}>
@@ -34,16 +29,17 @@ const Grid = ({ grid, onCellToggle }) => {
               className={classNames(styles.cell, {
                 [styles.alive]: isAlive
               })}
-              onMouseEnter={(event) => {
+              onMouseEnter={event => {
                 if (event.buttons & LEFT_BUTTON_BIT_MASK) {
                   onCellToggle(rowIndex, cellIndex);
                 }
               }}
-              onTouchMove={(event) => {
+              onTouchMove={event => {
                 console.log(event);
                 onCellToggle(rowIndex, cellIndex);
               }}
-              onClick={() => onCellToggle(rowIndex, cellIndex)} />
+              onClick={() => onCellToggle(rowIndex, cellIndex)}
+            />
           ))}
         </div>
       ))}
@@ -51,4 +47,4 @@ const Grid = ({ grid, onCellToggle }) => {
   );
 };
 
-export default Grid
+export default Grid;

@@ -1,7 +1,13 @@
 body {
-  font-family: Times New Roman;
+  display: flex;
+  justify-content: center;
+  margin: 0;
+  height: 100%;
+  overflow: hidden;
+  font-family: Orbitron;
   user-select: none;
-  font-size: 7px;
+  --main-color: #e55743;
+  --text-color: #373837;
 }
 
 @media (min-width: 400px) {

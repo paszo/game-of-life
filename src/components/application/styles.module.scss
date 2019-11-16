@@ -1,26 +1,27 @@
 .main {
-  display: block;
-  text-align: center;
-}
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 
-.gridWrapper {
-  text-align: center;
-}
+  .generation {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+    font-size: 17px;
+    color: var(--text-color);
+  }
 
-.generation {
-  font-size: 20px;
-  margin-bottom: 5px;
-}
-
-.resetGame {
-  display: block;
-  margin: 0 auto;
-  color: #E55743;
-  width: 80px;
-  height: 30px;
-  line-height: 20px;
-  font-size: 16px;
-  cursor: pointer;
-  outline: none;
-  border: 0;
+  .resetGame {
+    display: flex;
+    justify-content: center;
+    color: var(--text-color);
+    padding: 0;
+    margin: 5px;
+    font-size: 16px;
+    font-family: inherit;
+    cursor: pointer;
+    outline: none;
+    border: 0;
+  }
 }

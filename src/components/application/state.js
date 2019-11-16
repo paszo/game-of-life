@@ -22,8 +22,9 @@ export const useGameOfLifeState = () => {
     const newGrid = Array.from({ length: height }, () =>
       Array.from({ length: width }, () => false)
     );
-    setGrid(newGrid);
+    clearInterval(intervalIdRef.current);
     setGameState(GameState.Paused);
+    setGrid(newGrid);
     setGeneration(0);
   }, [ gridSize ]);
 

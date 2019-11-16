@@ -23,6 +23,9 @@
 
 .colorPicker {
   position: absolute;
+  display: flex;
+  align-items: center;
+  color: var(--text-color);
   right: 0;
   top: -30px;
 }

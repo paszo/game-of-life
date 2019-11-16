@@ -15,17 +15,22 @@ const Application = () => {
   } = useGameOfLifeState();
 
   return (
-    <div className={styles.main}>
-      <div className={styles.generation}>Generation: {generation}</div>
-      <FancyButton onClick={onGameStateToggle}>
-        {gameState === GameState.Paused && "Start"}
-        {gameState !== GameState.Paused && "Pause"}
-      </FancyButton>
-      <button className={styles.resetGame} onClick={onGameStart}>
-        Reset
-      </button>
-      <Grid grid={grid} onCellToggle={onCellToggle} />
-    </div>
+    <>
+      <div className={styles.generation}>
+        Generation:&nbsp;
+        <span className={styles.generationNumber}>{generation}</span>
+      </div>
+      <div className={styles.wrapper}>
+        <FancyButton onClick={onGameStateToggle}>
+          {gameState === GameState.Paused && "Start"}
+          {gameState !== GameState.Paused && "Pause"}
+        </FancyButton>
+        <button className={styles.resetGame} onClick={onGameStart}>
+          Reset
+        </button>
+        <Grid grid={grid} onCellToggle={onCellToggle} />
+      </div>
+    </>
   );
 };
 
